@@ -29,6 +29,11 @@
     color: white;
   }
 
+  .fa-soundcloud {
+    background: #f09433;
+    padding-left: 10px;
+  }
+
   .fa-linkedin{
       background: #0A66C2;
       color: white;
