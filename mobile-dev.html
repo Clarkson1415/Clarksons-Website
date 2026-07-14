@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="referrer" content="origin">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Freelance Game Developer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 48px;
+            align-items: start;
+            padding: 36px 0;
+            border-bottom: 1px solid rgba(74,107,74,0.1);
+        }
+
+            .service-row:last-child {
+                border-bottom: none;
+            }
+
+        .service-row-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--sage-dk);
+            padding-top: 3px;
+        }
+
+        .service-row-body h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-row-body p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .embed-wrap {
+            margin-top: 24px;
+        }
+
+        @media (max-width: 640px) {
+            .service-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-logo" href="index.html">GC</a>
+        <ul class="nav-links">
+            <li><a href="game-studio.html">Game Studio</a></li>
+            <li><a href="freelance-gamedev.html" class="active">Freelance Dev</a></li>
+            <li><a href="software-engineering.html">Software</a></li>
+            <li><a href="music-sfx.html">Music & SFX</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="index.html"><- Home</a>
+    </div>
+
+    <div class="page-hero">
+        <p class="page-eyebrow">Mobile Development</p>
+        <h1 class="page-title">Mobile Apps & Games</h1>
+        <p class="page-subtitle">I can make games, productivity apps and business solutions.</p>
+    </div>
+
+    <div class="page-section">
+        <p>Coming Soon</p>
+    </div>
+
+    <div class="dark-band">
+        <div class="dark-band-inner">
+            <h2>Got a project in mind?</h2>
+            <p>Available for short contracts and or longer maintenance and support arrangements.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link" class="btn btn-primary">Get in touch</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>G Clarkson 2026</p>
+    </footer>
+
+</body>
+</html>
