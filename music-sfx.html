@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music & SFX</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .genre-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .genre-tag {
+            background: var(--white);
+            border: 1px solid rgba(74,107,74,0.15);
+            border-radius: 6px;
+            padding: 20px;
+            text-align: center;
+        }
+
+            .genre-tag .g-icon {
+                font-size: 28px;
+                display: block;
+                margin-bottom: 8px;
+            }
+
+            .genre-tag .g-name {
+                font-size: 14px;
+                font-weight: 600;
+            }
+
+            .genre-tag .g-eg {
+                font-size: 12px;
+                color: var(--muted);
+                margin-top: 4px;
+            }
+
+        .track-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .track-item {
+            background: var(--white);
+            border: 1px solid rgba(74,107,74,0.12);
+            border-radius: 8px;
+            padding: 20px 24px;
+        }
+
+        .track-name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .track-desc {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .track-item audio {
+            width: 100%;
+        }
+
+        .spotify-embed {
+            margin-top: 12px;
+        }
+
+        @media (max-width: 640px) {
+            .track-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-logo" href="index.html">GC</a>
+        <ul class="nav-links">
+            <li><a href="game-studio.html">Game Studio</a></li>
+            <li><a href="freelance-gamedev.html">Freelance Dev</a></li>
+            <li><a href="software-engineering.html">Software</a></li>
+            <li><a href="music-sfx.html" class="active">Music & SFX</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="index.html"><- Home</a>
+    </div>
+
+    <div class="page-hero">
+        <p class="page-eyebrow">Music & Sound Design</p>
+        <h1 class="page-title">Scores, soundtracks,<br>and sound effects.</h1>
+        <p class="page-subtitle">I compose original music for games and film across a range of genres. From heavy metal boss fights to melancholy ambient pieces. Everything delivered release-ready.</p>
+    </div>
+
+    <div class="page-section">
+        <p class="section-label">Original Music</p>
+        <div class="track-grid">
+
+            <div class="track-item">
+                <div class="track-name">Valkyrie Queen</div>
+                <div class="track-desc">Orchestral composition. <a href="VQ.pdf" style="color:var(--sage-dk);">Download score (PDF)</a></div>
+                <audio controls><source src="VQ2.wav" type="audio/wav"></audio>
+            </div>
+
+            <div class="track-item">
+                <div class="track-name">Poppin Blocks Soundtrack</div>
+                <div class="track-desc">Puzzle game soundtrack.</div>
+                <audio controls><source src="PoppinBlocksSoundTrack.wav" type="audio/wav"></audio>
+            </div>
+
+            <div class="track-item">
+                <div class="track-name">Heavy Metal</div>
+                <div class="track-desc">Heavy metal.</div>
+                <audio controls><source src="Section5_29-06-2025.wav" type="audio/wav"></audio>
+            </div>
+
+            <!-- <div class="track-item">
+                <div class="track-name">Section 4</div>
+                <div class="track-desc">Unreleased game OST.</div>
+                <audio controls><source src="Section4chords-12-05-2025.mp3" type="audio/mpeg"></audio>
+            </div> -->
+
+            <div class="track-item">
+                <div class="track-name">Section 2</div>
+                <div class="track-desc">Unreleased game OST.</div>
+                <audio controls><source src="Section2sadProj_withPhase2_instruments_01_06_2025.wav" type="audio/wav"></audio>
+            </div>
+
+            <div class="track-item">
+                <div class="track-name">Talking Dungeon: Title Screen</div>
+                <div class="track-desc">Fantasy title screen music.</div>
+                <audio controls><source src="TalkingDungeonTitleTheme1.wav" type="audio/wav"></audio>
+            </div>
+
+            <div class="track-item">
+                <div class="track-name">Talking Dungeon: Battle Theme</div>
+                <div class="track-desc">Turn-based battle music.</div>
+                <audio controls><source src="TalkingDungeonBattleMusic.wav" type="audio/wav"></audio>
+            </div>
+
+            <div class="track-item">
+                <div class="track-name">Uprising</div>
+                <div class="track-desc">Hotline Miami and Katana Zero inspired.</div>
+                <audio controls><source src="AnimalUprising.mp3" type="audio/mpeg"></audio>
+            </div>
+
+            <div class="track-item">
+                <div class="track-name">Leaves Fall</div>
+                <div class="track-desc">An original guitar composition.</div>
+                <div class="spotify-embed">
+                    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/08PnJsNlWoIyIx0ShXUjxD?utm_source=generator&si=988c246a4cc4476e" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+
+            <div class="track-item">
+                <div class="track-name">RGB Bullets</div>
+                <div class="track-desc">Electronic / EDM. Also on Spotify.</div>
+                <audio controls><source src="RGB_bullets3.wav" type="audio/wav"></audio>
+                <div class="spotify-embed">
+                    <iframe style="border-radius:8px"
+                            src="https://open.spotify.com/embed/track/4drpXRrL57i790JejpYTxY?utm_source=generator&theme=0"
+                            width="100%" height="80" frameBorder="0" allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="page-section">
+        <p class="section-label">Scored Pieces</p>
+        <div class="genre-grid">
+           
+        </div>
+    </div>
+
+    <div class="page-section">
+        <p class="section-label">What I deliver</p>
+        <ul class="skill-list">
+            <li>Full score in musical notation</li>
+            <li>Deliverables in WAV, MP3, OGG, or whatever format your engine needs</li>
+            <li>Full OST tailored to your game's genre and tone</li>
+            <li>Loopable background tracks for menus, levels, and cutscenes</li>
+            <li>Battle, boss, and action music</li>
+            <li>Ambient and atmospheric pieces for exploration</li>
+            <li>Title screen and credits music</li>
+            <li>Sound effects for UI or gameplay</li>
+        </ul>
+    </div>
+
+    <div class="dark-band">
+        <div class="dark-band-inner">
+            <h2>Need music for your project?</h2>
+            <p>Tell me about your game or film, the mood you're going for, and how many tracks you need. I'll get back to you with a quote.</p>
+            <div style="display:flex; gap:16px; flex-wrap:wrap;">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link" class="btn btn-primary">Get in touch</a>
+                <a href="https://open.spotify.com/artist/5JbNcfT5xS2d5s1cl6emz3" class="btn btn-accent">Spotify</a>
+                <a href="https://soundcloud.com/user-722492237-363068648" class="btn btn-accent">SoundCloud</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>G Clarkson 2026</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="referrer" content="origin">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Freelance Game Developer</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+    <link rel="stylesheet" href="shared.css">
+    <style>
+        .service-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 48px;
+            align-items: start;
+            padding: 36px 0;
+            border-bottom: 1px solid rgba(74,107,74,0.1);
+        }
+
+            .service-row:last-child {
+                border-bottom: none;
+            }
+
+        .service-row-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--sage-dk);
+            padding-top: 3px;
+        }
+
+        .service-row-body h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .service-row-body p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .embed-wrap {
+            margin-top: 24px;
+        }
+
+        @media (max-width: 640px) {
+            .service-row {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a class="nav-logo" href="index.html">GC</a>
+        <ul class="nav-links">
+            <li><a href="game-studio.html">Game Studio</a></li>
+            <li><a href="freelance-gamedev.html" class="active">Freelance Dev</a></li>
+            <li><a href="software-engineering.html">Software</a></li>
+            <li><a href="music-sfx.html">Music & SFX</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="index.html"><- Home</a>
+    </div>
+
+    <div class="page-hero">
+        <p class="page-eyebrow">Game Development</p>
+        <h1 class="page-title">I'd love to make a game with you</h1>
+        <p class="page-subtitle">Whether you have an idea, a prototype, or a nearly-shipped game I can step in and take it to the next level.</p>
+    </div>
+
+    <div class="page-section">
+        <p class="section-label">My studio</p>
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items:center;">
+            <div>
+                <h2 class="section-heading">1 Teaspoon Games</h2>
+                <p style="font-size:15px; color:var(--muted); line-height:1.7; margin-bottom:20px;">
+                    I founded <a href="https://1tspgames.com" style="color:var(--sage-dk);">1 Tsp Games</a> as a place to build the games I want to exist in the world.
+                </p>
+                <a href="https://clarkson1729.itch.io/" class="btn btn-outline-sage">See my games →</a>
+            </div>
+            <div class="embed-wrap">
+                <iframe frameborder="0"
+                        src="https://itch.io/embed/4340476?border_width=5&bg_color=636a61&fg_color=ffffff"
+                        width="100%" height="175">
+                    <a href="https://clarkson1729.itch.io/feed-the-frogs-demo">Feed the Frogs (Demo)</a>
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <p class="section-label">What I can do for your game</p>
+
+        <div class="service-row">
+            <span class="service-row-label">Concept to Release</span>
+            <div class="service-row-body">
+                <h3>Full development lifecycle</h3>
+                <p>I can take your game from initial idea through prototype, alpha, beta, and release. I've shipped on Itch.io and understand the Steamworks pipeline.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <span class="service-row-label">Code</span>
+            <div class="service-row-body">
+                <h3>Features, bug fixing & optimisation</h3>
+                <p>New gameplay features, bug squashing, performance optimisation (instancing, LODs, grid culling), and QA. I'm confident in C#, GDScript, Typescript and Javascript and I'm working on my C, C++ and shader writing skills.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <span class="service-row-label">Audio</span>
+            <div class="service-row-body">
+                <h3>Release-ready soundtracks & SFX</h3>
+                <p>Original music and sound effects designed around your game's world. See the <a href="music-sfx.html" style="color:var(--sage-dk);">Music & SFX page</a> for examples.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <span class="service-row-label">Pipeline</span>
+            <div class="service-row-body">
+                <h3>CI/CD & automated deployment</h3>
+                <p>I can set up automated export and deployment pipelines for your team, targeting Steamworks, Itch.io, or your own site. No more manual exports before every update.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <span class="service-row-label">Art</span>
+            <div class="service-row-body">
+                <h3>Placeholder assets</h3>
+                <p>I can create placeholder art to keep momentum. I'm an amateur artist but keen to improve my skills.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <span class="service-row-label">Web & Marketing</span>
+            <div class="service-row-body">
+                <h3>Studio website & marketing content</h3>
+                <p>I can build and maintain your studio's web presence, and produce content (screenshots, GIFS, videos) to support your marketing throughout development.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-section">
+        <p class="section-label">My Game Portfolio</p>
+
+        <!-- GAME ITEM — repeat this block for each game -->
+        <div style="border-bottom: 1px solid rgba(74,107,74,0.12); padding-bottom: 48px; margin-bottom: 48px;">
+
+            <!-- Top: GIF/video + itch embed side by side -->
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;">
+
+                <!-- Left: GIF or video -->
+                <div>
+                    <!-- Option A: GIF -->
+                    <!--<img src="feedthefrogs.gif" alt="Feed the Frogs gameplay" style="width:100%; border-radius:8px; display:block;">-->
+                    <!-- Option B: video -->
+                    <!--<video autoplay loop muted playsinline
+           style="width:100%; border-radius:8px; display:block;">
+        <source src="feedthefrogs.mp4" type="video/mp4">
+    </video>-->
+                    <!--Option C Youtube -->
+                    <!--<iframe src="https://www.youtube-nocookie.com/embed/PKjAwGgVfDw" style="width:100%; border-radius:8px; display:block; aspect-ratio:16/9;" frameborder="0" allowfullscreen allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"> </iframe>-->
+
+                    <!--Streamable embed -->
+                    <div style="position:relative; width:100%; height:0px; padding-bottom:56.426%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/lr2nxc?nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+
+                </div>
+
+                <!-- Right: itch embed -->
+                <div>
+                    <iframe frameborder="0"
+                            src="https://itch.io/embed/4340476?border_width=5&bg_color=636a61&fg_color=ffffff"
+                            width="100%" height="175">
+                        <a href="https://clarkson1729.itch.io/feed-the-frogs-demo">Feed the Frogs (Demo)</a>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Bottom: title + description -->
+            <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Feed the Frogs</h3>
+            <p style="font-size:15px; color:var(--muted); line-height:1.7; max-width:640px; margin-bottom:16px;">
+                An incremental idle game about feeding frogs. Built in Godot. Planned commercial release on Steam in 2026.
+            </p>
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a href="https://clarkson1729.itch.io/feed-the-frogs-demo" class="btn btn-outline-sage">Play demo →</a>
+            </div>
+
+        </div>
+        <!-- END GAME ITEM -->
+        <!-- paste another game block here -->
+    </div>
+    
+    <div class="page-section">
+        <p class="section-label">Engine experience</p>
+        <div class="card-grid">
+            <div class="card">
+                <h3>🟣 Godot</h3>
+                <p>Primary engine for personal and studio projects. Comfortable with GDScript and C# in Godot 4. Built performance optimisations using MeshInstance2D, grid-based rendering, and scene instancing.</p>
+            </div>
+            <div class="card">
+                <h3>⬜ Unity</h3>
+                <p>Used in academic and personal projects. Familiar with the editor, component system, and C# scripting pipeline.</p>
+            </div>
+            <div class="card">
+                <h3>🛠️ Tools & Pipeline</h3>
+                <p>Set up automated CI/CD export pipelines for Itch.io and Steamworks deployments.</p>
+            </div>
+            <div class="card">
+                <h3>🎨 Art & Audio</h3>
+                <p>Can produce full original soundtracks, sound effects, and placeholder art assets.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="dark-band">
+        <div class="dark-band-inner">
+            <h2>Got a project in mind?</h2>
+            <p>Tell me where your game is at and what you need. I'm available for short contracts through to long-term co-dev arrangements.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link" class="btn btn-primary">Get in touch</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>G Clarkson 2026</p>
+    </footer>
+
+</body>
+</html>

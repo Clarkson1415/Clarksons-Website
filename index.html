@@ -1,264 +1,573 @@
 <!DOCTYPE html>
-<html>
-<title>GC</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<style>
-body,h1 {
-  font-family: "Montserrat", sans-serif;
-}
-body {
-  background-color: #bdd3bd;
-}
-img {margin-bottom: -7px}
-.w3-row-padding img {margin-bottom: 12px}
-</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Grace Clarkson</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
+        :root {
+            --sage: #8fac8f;
+            --sage-lt: #bdd3bd;
+            --sage-dk: #4a6b4a;
+            --ink: #1a2218;
+            --paper: #f2f5f0;
+            --accent: #d4a847;
+            --muted: #5a6e59;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            min-height: 100vh;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 48px;
+            background: rgba(242, 245, 240, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(74, 107, 74, 0.15);
+        }
+
+        .nav-logo {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--sage-dk);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+            .nav-links a {
+                font-size: 14px;
+                font-weight: 500;
+                color: var(--muted);
+                text-decoration: none;
+                letter-spacing: 0.3px;
+                transition: color 0.2s;
+            }
+
+                .nav-links a:hover {
+                    color: var(--sage-dk);
+                }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 120px 48px 80px;
+            gap: 64px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-text {
+        }
+
+        .hero-eyebrow {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sage-dk);
+            margin-bottom: 20px;
+        }
+
+        .hero-name {
+            font-size: clamp(48px, 6vw, 80px);
+            font-weight: 700;
+            line-height: 1.0;
+            letter-spacing: -2px;
+            color: var(--ink);
+            margin-bottom: 12px;
+        }
+
+            .hero-name span {
+                color: var(--sage-dk);
+            }
+
+        .hero-tagline {
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 300;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 40px;
+            max-width: 420px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.2s;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary {
+            background: var(--sage-dk);
+            color: var(--white);
+        }
+
+            .btn-primary:hover {
+                background: var(--ink);
+            }
+
+        .btn-outline {
+            border: 1.5px solid var(--sage-dk);
+            color: var(--sage-dk);
+        }
+
+            .btn-outline:hover {
+                background: var(--sage-dk);
+                color: var(--white);
+            }
+
+        .hero-img-wrap {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-img-bg {
+            width: clamp(240px, 30vw, 380px);
+            height: clamp(240px, 30vw, 380px);
+            border-radius: 50%;
+            background: var(--sage);
+            opacity: 0.25;
+            position: absolute;
+        }
+
+        .hero-img {
+            width: clamp(200px, 25vw, 320px);
+            height: auto;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+            object-fit: cover;
+            border: 3px solid var(--sage-lt);
+        }
+
+        /* SECTION DIVIDER */
+        .section-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sage-dk);
+            margin-bottom: 48px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+            .section-label::after {
+                content: '';
+                flex: 1;
+                height: 1px;
+                background: var(--sage);
+                opacity: 0.4;
+            }
+
+        /* SERVICES GRID */
+        .services {
+            padding: 96px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid rgba(74, 107, 74, 0.15);
+            border-radius: 8px;
+            padding: 40px;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.1s;
+            position: relative;
+            overflow: hidden;
+        }
+
+            .service-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: var(--sage-dk);
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: transform 0.1s;
+            }
+
+            .service-card:hover {
+                border-color: var(--sage);
+                box-shadow: 0 8px 32px rgba(74, 107, 74, 0.15);
+                transform: translateY(-2px);
+            }
+
+                .service-card:hover::before {
+                    transform: scaleX(1);
+                }
+
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .card-desc {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .card-link {
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            color: var(--sage-dk);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* ABOUT STRIP */
+        .about-strip {
+            background: var(--sage-dk);
+            color: var(--white);
+            padding: 96px 48px;
+        }
+
+        .about-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .about-heading {
+            font-size: clamp(32px, 4vw, 52px);
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .about-body {
+            font-size: 16px;
+            line-height: 1.75;
+            color: rgba(255,255,255,0.8);
+        }
+
+            .about-body p + p {
+                margin-top: 16px;
+            }
+
+        .about-highlights {
+            display: flex;
+            gap: 48px;
+            margin-top: 36px;
+            flex-wrap: wrap;
+        }
+
+        .highlight-item {
+        }
+
+        .highlight-num {
+            font-family: 'Space Mono', monospace;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .highlight-label {
+            font-size: 13px;
+            color: rgba(255,255,255,0.6);
+            margin-top: 4px;
+        }
+
+        /* SOCIALS / CONTACT */
+        .contact-band {
+            padding: 80px 48px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+            .contact-band h2 {
+                font-size: 32px;
+                font-weight: 700;
+                letter-spacing: -1px;
+            }
+
+            .contact-band p {
+                color: var(--muted);
+                margin-top: 8px;
+            }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            border: 1.5px solid rgba(74,107,74,0.3);
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+            .social-link:hover {
+                border-color: var(--sage-dk);
+                color: var(--sage-dk);
+            }
+
+        footer {
+            border-top: 1px solid rgba(74,107,74,0.15);
+            padding: 32px 48px;
+            text-align: center;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding: 100px 24px 60px;
+                text-align: center;
+            }
+
+            .hero-img-wrap {
+                order: -1;
+            }
+
+            .hero-tagline {
+                margin: 0 auto 32px;
+            }
+
+            .hero-cta-group {
+                justify-content: center;
+            }
+
+            .services {
+                padding: 64px 24px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-strip {
+                padding: 64px 24px;
+            }
+
+            .about-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .contact-band {
+                padding: 64px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            footer {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
 <body>
-  <img src="pic.png" alt="Profile picture"
-    style="position: absolute; top: 50px; left: 50px; width: 80px; height: 150px; width: 150px;">
-<!-- !PAGE CONTENT! -->
-<div class="w3-content" style="max-width:1500px">
 
-<!-- Header -->
-<header class="w3-center w3-margin-bottom", style="margin-top: 100px">
-  <h1> <p style="font-size:35px"> <b> Grace C </b> </p> </h1>
-  <p style="font-size:20px">Software engineer, game dev and musician. <a href="games.html">asdf</a></br>
-</header>
+    <nav>
+        <a class="nav-logo" href="index.html">GC</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="https://github.com/Clarkson1415">GitHub</a></li>
+            <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link">Contact</a></li>
+        </ul>
+    </nav>
 
-<div class= "topnav" style = "margin:40px" > 
-  <nav>
-    <p style = "font-size:20px" >
-      <a href="./index.html"> Home </a>
-      <a style="padding-left: 20px" href="https://github.com/Clarkson1415"> Github </a>
-      <a style="padding-left: 20px" href="https://open.spotify.com/artist/5JbNcfT5xS2d5s1cl6emz3?si=juyVYVLGSNCvgJofi3rnrA"> Spotify </a>
-      <a style="padding-left: 20px" href="https://soundcloud.com/user-722492237-363068648"> Soundcloud </a>
-      <a style="padding-left: 20px" href="https://clarkson1729.itch.io/"> My Games On Itch.io </a>
-      <!-- <a style="padding-left: 20px" href="https://www.youtube.com/@GraceOnBass-bs8cx"> Grace On Bass </a> -->
-      <!-- <a style="padding-left: 20px" href=""> My Podcast </a> -->
-    </p>
-  </nav>
-</div> 
+    <main>
+        <section class="hero">
+            <div class="hero-text">
+                <p class="hero-eyebrow">Brisbane QLD</p>
+                <h1 class="hero-name">Grace<br><span>Clarkson</span></h1>
+                <p class="hero-tagline">Software engineer, indie game developer and composer.</p>
+                <div class="hero-cta-group">
+                    <a href="#services" class="btn btn-primary">See what I do</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link" class="btn btn-outline">Get in touch</a>
+                </div>
+            </div>
+            <div class="hero-img-wrap">
+                <div class="hero-img-bg"></div>
+                <img src="pic.png" alt="Grace Clarkson" class="hero-img">
+            </div>
+        </section>
 
-<!-- Running 1tsp games  -->
+        <section class="services" id="services">
+            <p class="section-label">What I do</p>
+            <div class="services-grid">
 
-<!-- For software and game development roles?? OR separate them??  -->
-<!-- Put Photos or JR Ranger app screens and development collaboration -->
-<!-- GIF of ftf and optimisation things I have done using mesh instance 2d etc? splitting into grid. -->
-<!-- Things I did at RPM Global 2 years of experience... -->
+                <a href="freelance-gamedev.html" class="service-card">
+                    <span class="card-icon">🛠️</span>
+                    <h2 class="card-title">Game Development</h2>
+                    <p class="card-desc">Looking for a quick prototype of your idea? Or a project partnership? I can help bring your vision to life.</p>
+                    <span class="card-link">See what I offer -></span>
+                </a>
 
+                <a href="software-engineering-for-freelance.html" class="service-card">
+                    <span class="card-icon">🔧</span>
+                    <h2 class="card-title">Software Engineering</h2>
+                    <p class="card-desc">I would love to help build a robust software solution to help with your business needs. From desktop applications to complex web services and mobile apps. Or maybe you don't know what you need yet, feel free to get in touch!</p>
+                    <span class="card-link">View my software CV -></span>
+                </a>
 
-<div class= "w3-clear" style = "margin:40px"> 
-  <p class="w3-left" style="font-size:15px"> 
-    <span style="font-size: 20pt;"> About Me</span> </br>
-    I'm a software engineer, game developer and musician. I have a passion for mathematics, problem solving, and creating art and interactive experiences.
-</div>
+                <a href="music-sfx.html" class="service-card">
+                    <span class="card-icon">🎵</span>
+                    <h2 class="card-title">Music & SFX for Games & Film</h2>
+                    <p class="card-desc">Orchestral composition, electronic music, and sound design. I deliver release-ready audio tailored to your game's mood and world.</p>
+                    <span class="card-link">Hear my work -></span>
+                </a>
 
-<div class="w3-clear" style="margin:40px">
-    <span style="font-size: 20pt;">1 Tsp Games</span>
-    <p style="font-size:15px">I am the founder of <a href="https://1tspgames.com">1 Tsp Games</a>, a small indie game development studio.</p>
-<iframe frameborder="0" src="https://itch.io/embed/4340476?border_width=5&amp;bg_color=636a61&amp;fg_color=ffffff" width="560" height="175"><a href="https://clarkson1729.itch.io/feed-the-frogs-demo">Feed the Frogs (Demo) by Clarkson1729</a></iframe>
-</div>
+                <a href="web-dev.html" class="service-card">
+                    <span class="card-icon">💻</span>
+                    <h2 class="card-title">Web Development</h2>
+                    <p class="card-desc">I build responsive, user-friendly websites and web applications.</p>
+                    <span class="card-link">See my web dev work-></span>
+                </a>
+                <a href="mobile-dev.html" class="service-card">
+                    <span class="card-icon">📱</span>
+                    <h2 class="card-title">Mobile Development</h2>
+                    <p class="card-desc">Need a mobile app or or game? I'd love to build it for you. Native, cross-platform, or hybrid, I can deliver a polished product for iOS and Android.
+                    </p>
+                    <span class="card-link">See my work -></span>
+                </a>
+            </div>
+        </section>
 
-<div class="w3-clear" style="margin:40px">
-  <span style="font-size: 20pt;">What I can do for your game</span>
-    <ul>
-      <li>I can get your game from idea to prototype to release-ready.</li>
-      <li>I can create placeholder art assets.</li>
-      <li>I can create release-ready soundtracks and sound effects.</li>
-      <li>I can setup automated pipelines for your team to deploy on Steamworks, Itch.io or your website.</li>
-      <li>I can develop your studio's website, and create content for marketing throughout development.</li>
-      <li>I can program with C#, C++, GDScript, Typescript/Javascript, PHP.</li>
-      <li>I can add new features, fix bugs, optimise performance, and do QA.</li>
-      <li>I can give advice on code architecture and development practices.</li>
-      <li>I can help port your game from one framework to another.</li>
-  </ul>
-</div>
+        <section class="about-strip" id="about">
+            <div class="about-inner">
+                <h2 class="about-heading">A bit about me</h2>
+                <div class="about-body">
+                    <p>I'm a Brisbane-based software engineer with a passion for games, mathematics, music, and stories. I founded <a href="https://1tspgames.com" style="color:var(--accent);">1 Tsp Games</a>, a small indie studio.</p>
+                    <p>Outside of games I've worked as a Software Engineer for 2 years building .NET applications, mobile apps, and websites. I've been in research roles at QUT and the Australian Bureau of Statistics, and led development of a mobile app for <a href="https://www.detsi.qld.gov.au/" style="color:var(--accent);">DETSI's</a> Junior Ranger program in my Capstone.</p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-num">2+</span>
+                            <div class="highlight-label">Years in industry</div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-num">1+</span>
+                            <div class="highlight-label">Year in freelance</div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-num">3</span>
+                            <div class="highlight-label">Shipped projects</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<div class="w3-clear" style="margin:40px">
-    <span style="font-size: 20pt;">Experience</span>
-  <ul>
-    <li>2 years of experience as a .Net software developer. Developing .Net/C# desktop and web applications.</li>
-    <li>During my undergraduate I worked in a small group with <a href="https://www.detso.org/">DETSI</a> to an app for mobile and web for their Junior Ranger program in React Native and Typescript. In which I was the lead developer and sole backend developer.</li>
-    <li>Game development experience with Unity and Godot game engines.</li>
-    <li>Worked at the Australian Bureau of Statistics in a research role.</li>
-    <li>Research experience at Queensland University of Technology, as an RA and completing a vacation research program.</li>
-  </ul>
-</div>
+        <section class="contact-band">
+            <div>
+                <h2>Find me online</h2>
+                <p>I'm active on GitHub, Itch, Spotify, and SoundCloud.</p>
+            </div>
+            <div class="social-links" style="flex-wrap:wrap;">
+                <a href="https://github.com/Clarkson1415" class="social-link">GitHub</a>
+                <a href="https://clarkson1729.itch.io/" class="social-link">Itch.io</a>
+                <a href="https://open.spotify.com/artist/5JbNcfT5xS2d5s1cl6emz3" class="social-link">Spotify</a>
+                <a href="https://soundcloud.com/user-722492237-363068648" class="social-link">SoundCloud</a>
+                <a href="https://www.linkedin.com/in/grace-clarkson/" class="social-link">LinkedIn</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link" class="btn btn-primary">Contact me</a>
+            </div>
+        </section>
+    </main>
 
-<div class="w3-clear" style="margin:40px">
-    <span style="font-size: 20pt;">Noteable Projects:</span>
-  <ul>
-    <li><a href="https://clarkson1729.itch.io/poppin-blocks">Poppin Blocks</a>: Won the QUT Game Dev Club Winter
-      Game Jam 2025. A 2D puzzle game about matching colours of cute square characters. <a href="https://github.com/Clarkson1415/PoppinBlocks"> Code </a> </li>
-    <li>"Wordplay" a roguelike spelling game I created in a team in CAB302: Software Development. In a group of 5 we created a Java FX application with Automated CI. <a href="https://github.com/cab302-team/Cab302-teams-project">Code</a> </li>
-    <li>Completed an embedded systems project in C, creating a pattern
-      memory game with a microcontroller, 4 buttons, and a 7-segment display in CAB202 (microprocessors and digital systems) in which I received a grade of 7/7.</li>
-    <li>I designed, printed and soldered my own PCB design which has a switch to switch on and off a buzzer and a flashing LED in EGB240 Electronic Design.</li>
-    <li>Created an analogue synthesiser using a Raspberry Pi in IGB102 receiving a grade of 7/7.</li>
-    <li>CAB301 (Algorithms and Complexity): Used dynamic programming and complexity analysis to analyse to solve complex problems with C# as efficiently as possible.</li>
-    <li>CAB203 (discrete mathematics): Used mathematical concepts to solve real-world problems with Python.</li>
-    <li>Youtube to mp3/mp4 downloader. <a href="https://github.com/Clarkson1415/Youtube_To_mp3_or_mp4">Repository</a></li>
-    <li>A pdf combiner. <a href="https://www.linkedin.com/in/grace-clarkson/details/experience/">Repository</a> </li>
-    <li>My music projects, see below.</li>
-  </ul>
-</div>
-
-<div class="w3-clear" style="margin:40px">
-  <p class="w3-left" style="font-size:15px"></p>
-    <span style="font-size: 20pt;"> My Music:</span>
-
-    <!-- valkyrie queen -->
-    
-    <!-- the pdf VQ -->
-      <p style="font-size:15px"> Valkyrie Queen </p>
-      <p style="font-size:12px"> An Orchestral Composition, download the score <br>
-        <a style="font-size:15px" href="VQ.pdf">Valkyrie Queen pdf </a>
-      </p>
-    
-      <div>
-        <!-- VQ music player -->
-        <audio controls>
-          <source src="VQ2.wav" type="audio/mpeg">
-        </audio>
-      </div>
-
-
-      <!-- poppin -->
-      <p style="font-size:15px"> Poppin Blocks soundtrack </p>
-      <p style="font-size:12px">My puzzle game soundtrack</p>
-      <audio controls>
-        <source src="PoppinBlocksSoundTrack.wav" type="audio/mpeg">
-      </audio>
-      <!-- end poppin -->
-
-      <!-- Calumns game -->
-      <p style="font-size:15px">These are soundtracks for an unannounced game:</p>
-      <p style="font-size:15px">Heavy Metal</p>
-      <audio controls>
-        <source src="Section5_29-06-2025.wav" type="audio/mpeg">
-      </audio>
-      
-      <p style="font-size:15px">Section 4</p>
-      <audio controls>
-        <source src="Section4chords-12-05-2025.mp3" type="audio/mpeg">
-      </audio>
-      
-      <p style="font-size:15px">Section 2</p>
-      <audio controls>
-        <source src="Section2sadProj_withPhase2_instruments_01_06_2025.wav" type="audio/mpeg">
-      </audio>
-      <!-- End these next 3 belong to the sound track of a single game -->
-      
-      <!-- Talking dungeon title - fantasy game title screen -->
-      <p style="font-size:15px">Talking Dungeon Title screen music</p>
-      <p style="font-size:12px">Title screen fantasy intrigue!</p>
-      <audio controls>
-        <source src="TalkingDungeonTitleTheme1.wav" type="audio/mpeg">
-      </audio>
-      <!-- end of TalkingDungeonBattleMusic.wav turn based battle music -->
-
-      <!-- TalkingDungeonBattleMusic.wav turn based battle music -->
-      <p style="font-size:15px">Talking Dungeon battle music</p>
-      <p style="font-size:12px">Turn based battle music</p>
-      <audio controls>
-        <source src="TalkingDungeonBattleMusic.wav" type="audio/mpeg">
-      </audio>
-      <!-- end of TalkingDungeonBattleMusic.wav turn based battle music -->
-
-      <!-- AnimalUprising.wav msic -->
-      <p style="font-size:15px">Animal Uprising</p>
-      <p style="font-size:12px">Mow down the enemy. - Hotline Miami and Katana Zero inspired.</p>
-      <audio controls>
-        <source src="AnimalUprising.mp3" type="audio/mpeg">
-      </audio>
-      <!-- end of AnimalUprising.wav turn based battle music -->
-
-      <!-- rgb bullets -->
-      <p style="font-size:15px"> RGB Bullets </p>
-      <p style="font-size:12px"> A bit of EDM </p>
-      <audio controls>
-        <source src="RGB_bullets3.wav" type="audio/mpeg">
-      </audio>
-      
-      <iframe style="border-radius:12px"
-        src="https://open.spotify.com/embed/track/4drpXRrL57i790JejpYTxY?utm_source=generator&theme=0" width="100%"
-        height="152" frameBorder="0" allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-      <!-- end of rgb bullets -->
-
-      <!-- Neonware -->
-      <p style="font-size:15px"> Neonware </p>
-      <p style="font-size:12px">Synthwave EDM</p>
-      <iframe style="border-radius:12px"
-        src="https://open.spotify.com/embed/track/3ozRYqHCUs2VQEKvH8LewR?utm_source=generator&theme=0" width="100%"
-        height="152" frameBorder="0" allowfullscreen=""
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </p>
-</div>
-
-
-<div>
-  <p style="font-size: 20px"> 
-    Contact me: <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link"> Here</a>
-    </p>
-</div>
-
-<!-- My Socials -->
-<!-- Add icon library -->
-<link rel="stylesheet" href="styles.css">
-
-<p style="font-size:20px"> Where you can find me: </br>
-  <!-- Add font awesome icons -->
-  <a href="https://www.linkedin.com/in/grace-clarkson/" class="fa fa-linkedin"></a>
-  <!-- <a href="#" class="fa fa-facebook"></a> -->
-   <!-- <a href="#" class="fa fa-twitter"></a> -->
-  <!-- <a href="#" class="fa fa-instagram"></a> -->
-  <a href="https://clarkson1729.itch.io/" class="fa fa-itchio"></a>
-  <a href="https://open.spotify.com/artist/5JbNcfT5xS2d5s1cl6emz3?si=6mwHk9IzQaqhP9VkXfJGPw" class="fa fa-spotify"></a>
-  <a href="https://soundcloud.com/user-722492237-363068648" class="fa fa-soundcloud"></a>
-</p>
-
-<!-- End Page Content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px"> 
-  <!-- <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i> -->
-  <!-- <p class="w3-medium"> Powered by <a href="https://www.pokemon.com/us/pokedex/mew" target="_blank" class="w3-hover-text-green">UR MUM </a> <p class="w3-medium"> ain't no one uses squarespace in this household </p> </p> -->
-  <p class="w3-medium"> G Clarkson 2026 </p>
-
-</footer>
- 
-<script>
-// Toggle grid padding
-function myFunction() {
-  
-  var x = document.getElementById("myGrid");
-  if (x.className === "w3-row") {
-    x.className = "w3-row-padding";
-  } else { 
-    x.className = x.className.replace("w3-row-padding", "w3-row");
-  }
-}
- 
-
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.width = "50%";
-  document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-</script>
+    <footer>
+        <p>G Clarkson 2026</p>
+    </footer>
 
 </body>
 </html>
