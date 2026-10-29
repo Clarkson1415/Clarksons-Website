@@ -14,8 +14,8 @@
 
         :root {
             --sage: #8fac8f;
-            --sage-lt: #bdd3bd;
-            --sage-dk: #4a6b4a;
+            --sage-lighter: #bdd3bd;
+            --sage-darker: #4a6b4a;
             --ink: #1a2218;
             --paper: #f2f5f0;
             --accent: #d4a847;
@@ -54,7 +54,7 @@
             font-family: 'Space Mono', monospace;
             font-weight: 700;
             font-size: 18px;
-            color: var(--sage-dk);
+            color: var(--sage-darker);
             text-decoration: none;
             letter-spacing: -0.5px;
         }
@@ -75,7 +75,7 @@
             }
 
                 .nav-links a:hover {
-                    color: var(--sage-dk);
+                    color: var(--sage-darker);
                 }
 
         /* HERO */
@@ -90,15 +90,11 @@
             margin: 0 auto;
         }
 
-        .hero-text {
-        }
-
         .hero-eyebrow {
-            font-family: 'Space Mono', monospace;
             font-size: 12px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: var(--sage-dk);
+            color: var(--sage-darker);
             margin-bottom: 20px;
         }
 
@@ -112,7 +108,7 @@
         }
 
             .hero-name span {
-                color: var(--sage-dk);
+                color: var(--sage-darker);
             }
 
         .hero-tagline {
@@ -143,7 +139,7 @@
         }
 
         .btn-primary {
-            background: var(--sage-dk);
+            background: var(--sage-darker);
             color: var(--white);
         }
 
@@ -152,12 +148,12 @@
             }
 
         .btn-outline {
-            border: 1.5px solid var(--sage-dk);
-            color: var(--sage-dk);
+            border: 1.5px solid var(--sage-darker);
+            color: var(--sage-darker);
         }
 
             .btn-outline:hover {
-                background: var(--sage-dk);
+                background: var(--sage-darker);
                 color: var(--white);
             }
 
@@ -184,16 +180,14 @@
             position: relative;
             z-index: 1;
             object-fit: cover;
-            border: 3px solid var(--sage-lt);
         }
 
         /* SECTION DIVIDER */
         .section-label {
-            font-family: 'Space Mono', monospace;
             font-size: 11px;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: var(--sage-dk);
+            color: var(--sage-darker);
             margin-bottom: 48px;
             display: flex;
             align-items: center;
@@ -241,7 +235,7 @@
                 left: 0;
                 right: 0;
                 height: 3px;
-                background: var(--sage-dk);
+                background: var(--sage-darker);
                 transform: scaleX(0);
                 transform-origin: left;
                 transition: transform 0.1s;
@@ -279,9 +273,8 @@
         }
 
         .card-link {
-            font-family: 'Space Mono', monospace;
             font-size: 12px;
-            color: var(--sage-dk);
+            color: var(--sage-darker);
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -289,7 +282,7 @@
 
         /* ABOUT STRIP */
         .about-strip {
-            background: var(--sage-dk);
+            background: var(--sage-darker);
             color: var(--white);
             padding: 96px 48px;
         }
@@ -327,11 +320,7 @@
             flex-wrap: wrap;
         }
 
-        .highlight-item {
-        }
-
         .highlight-num {
-            font-family: 'Space Mono', monospace;
             font-size: 36px;
             font-weight: 700;
             color: var(--accent);
@@ -387,15 +376,14 @@
         }
 
             .social-link:hover {
-                border-color: var(--sage-dk);
-                color: var(--sage-dk);
+                border-color: var(--sage-darker);
+                color: var(--sage-darker);
             }
 
         footer {
             border-top: 1px solid rgba(74,107,74,0.15);
             padding: 32px 48px;
             text-align: center;
-            font-family: 'Space Mono', monospace;
             font-size: 12px;
             color: var(--muted);
         }
@@ -421,10 +409,6 @@
 
             .hero-tagline {
                 margin: 0 auto 32px;
-            }
-
-            .hero-cta-group {
-                justify-content: center;
             }
 
             .services {
@@ -470,9 +454,11 @@
     <main>
         <section class="hero">
             <div class="hero-text">
-                <p class="hero-eyebrow">Brisbane QLD</p>
                 <h1 class="hero-name">Grace<br><span>Clarkson</span></h1>
-                <p class="hero-tagline">Software engineer, indie game developer and composer.</p>
+                <p class="hero-tagline">Software engineer, indie game developer and composer.
+                    <br>
+                    Brisbane Queensland
+                </p>
                 <div class="hero-cta-group">
                     <a href="#services" class="btn btn-primary">See what I do</a>
                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdLesInz8wHC-aPB3KYSt2G4jkxbVmDr97pJBskzsi_2238Bw/viewform?usp=sf_link" class="btn btn-outline">Get in touch</a>
