@@ -106,10 +106,23 @@
 
 								// No locked links? Deactivate all links and activate this section's one.
 									if ($nav_a.filter('.active-locked').length == 0) {
-
 										$nav_a.removeClass('active');
 										$this.addClass('active');
 
+										// Navigation Header Green section scroll bar
+										if (id == "#about"){ // if its the top section in the vertical nav (landscape view). Then round up to top to keep scroll at top.
+											$header.stop().animate({
+											scrollTop: 0
+											}, 300);
+										}
+										else{
+											// if not top item, just center scroll bar
+											$header.stop().animate({
+												scrollTop: $this.position().top + $header.scrollTop()
+													- ($header.height() / 2)
+													+ ($this.outerHeight() / 2)
+											}, 300);
+										}
 									}
 
 								// Otherwise, if this section's link is the one that's locked, unlock it.
@@ -133,7 +146,7 @@
 		// Panel.
 			$header
 				.panel({
-					delay: 500,
+					delay: 100,
 					hideOnClick: true,
 					hideOnSwipe: true,
 					resetScroll: true,

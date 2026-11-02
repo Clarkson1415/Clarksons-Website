@@ -23,14 +23,15 @@
 				</header>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active">About</a></li>
+						<li><a href="#about" class="active">About</a></li>
                         <li><a href="#two">Work History and Education</a></li>
 						<li><a href="#three">Video Games</a></li>
                         <li><a href="#tooling">Video Game Tooling/Plugins/Addons</a></li>
                         <li><a href="#desktop">Desktop Software</a></li>
-						<li><a href="#four">Mobile and Web Projects</a></li>
-                        <li><a href="#four">Music</a></li>
-                        <li><a href="#four">3D Modelling</a></li>
+						<li><a href="#mobile">Mobile and Web Projects</a></li>
+                        <li><a href="#music">Music</a></li>
+                        <li><a href="#3d">3D Modelling</a></li>
+						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</nav>
 				<footer>
@@ -46,12 +47,10 @@
 
 		<!-- Wrapper -->
 			<div id="wrapper">
-
 				<!-- Main -->
 					<div id="main">
-
 						<!-- One -->
-							<section id="one">
+							<section id="about">
 								<!-- <div class="image main" data-position="center">
 									<img src="images/banner.jpg" alt="" />
 								</div> -->
@@ -61,7 +60,7 @@
 										<p>Hi!</p>
 									</header>
 									<p>
-                                        Brisbane based Software Engineer and game developer at <a href="https://1tspgames.com/">1 Tsp Games</a>.
+                                        Brisbane based Software Engineer, Game Developer and Musician.</a>
                                     </p>
 								</div>
 							</section>
@@ -133,7 +132,8 @@
 										</p>
 										<ul>
 											<li>Any <a href="https://docs.godotengine.org/en/stable/tutorials/2d/using_tilesets.html#id28">complete tileset</a> as per the Godot documentation can be plugged in for the floors / walls</li>
-											<li>decorations can be created using Godot's build in pattern tool for tilesets.</li>
+											<li>Decorations can be created using Godot's build in pattern tool for tilesets.</li>
+											<li>Supports animated tiles. E.g. see candles at 0:18.</li>
 										</ul>
 										<video width="100%" controls>
 											<source src="videos/dungeongenDemo.mp4" type="video/mp4">
@@ -161,12 +161,111 @@
 										</video> -->
 								</div>
 							</section>
-						<!-- Four -->
-							<section id="four">
+						<!-- mobile -->
+							<section id="mobile">
 								<div class="container">
-									<h3>Rest coming Soon...</h3>
-									<!-- <p>Contact Me</p>
-									<form method="post" action="#">
+									<h3>Mobile and Web projects</h3>
+									<h4>React Native Mobile and Web app</h4>
+									<p>For my final year Capstone project we created a React Native application for the Junior Rangers program with DETSI. I was the lead developer and was solely responsible for the backend server and database, as well as the primary developer on the frontend.<br>
+									</p>
+									<ul>
+										<li>Server was built with Node.js using Express</li>
+										<li>Client was build with React Native and Expo Go</li>
+										<li>SMS authentication implemented with Twilio</li>
+										<li>Used websockets for immediate updates for announcements, reactions, club membership and account updates.</li>
+										<li>IOS, Android and Web builds.</li>
+										<li>Read-aloud features for low-literacy audiences.</li>
+										<li>Can switch between multiple logged in users easily.</li>
+										<li>Club management features for Rangers with more than one club.</li>
+										<li>Test out the web build: <a href="https://junior-rangers-client.vercel.app/">https://junior-rangers-client.vercel.app/</a> - You'll need to signup as a Ranger first. <br>(Disclaimer: This prototype is only to showcase with portfolios, is not an official approved app by DETSI for public use.)</li>
+									</ul>
+									<div class="videoAndButtonsContainer">
+										<div class="buttonsRow">
+											<input id="JrSignup" type="submit" class="primary" value="Signing up a Jr Ranger" />
+											<input id="SwitchUsers" type="submit" class="secondary" value="Switching Users" />
+											<input id="RangerSignup" type="submit" class="secondary" value="Signing up a Ranger" />
+											<input id="SwitchClubs" type="submit" class="secondary" value="Switching Clubs" />
+											<input id="postingAndReacting" type="submit" class="secondary" value="Posting Announcements" />
+										</div>
+										<video width="100%" controls>
+											<source id="jr_app_demo_video_src" src="videos/jr_signup.mp4" type="video/mp4">
+											Your browser does not support the video tag.
+										</video>
+									</div>
+								</div>
+							</section>
+							<section id="music">
+								<div class="container">
+									<h3>Music</h3>
+									<p>I have been developing musicianship skills on various instruments as well as production and mastering skills over that past 10 years. I enjoy composing all types of genres for games and creating SFX as well.</p>
+									<h4>Neonware - Latest Synthwave Composition</h4>
+									<div>
+										<audio controls><source src="music/neonware.wav" type="audio/mp3"></audio>
+									</div>
+									<h4>Valkyrie Queen - boss soundtrack and score</h4>
+									<a href="music/VQ.pdf">View score (PDF)</a>
+									<div>
+										<audio controls><source src="music/VQ2.wav" type="audio/wav"></audio>
+									</div>
+									<h4>Good Luck Babe - Chappel Roan - Orchestra Arrangment</h4>
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/qK9B7mX76OA?si=iL7N3iu-oRudxbGJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+									<h4>Tracks for a currently unreleased game I did as a commission</h4>
+									<div>
+										<audio controls><source src="music/Section5_29-06-2025.wav" type="audio/wav"></audio>
+									</div>
+									<div>
+										<audio controls><source src="music/Section2sadProj_withPhase2_instruments_01_06_2025.wav" type="audio/wav"></audio>
+									</div>
+									<div>
+										<audio controls><source src="music/Section4chords-12-05-2025.mp3" type="audio/mp3"></audio>
+									</div>
+									<h4>Fantasy Game Title Screen - for my game Talking Dungeon</h4>
+									<div>
+										<audio controls><source src="music/TalkingDungeonTitleTheme1.wav" type="audio/wav"></audio>
+									</div>
+									<h4>Fantasy Battle - Talking Dungeon</h4>
+									<div>
+										<audio controls><source src="music/TalkingDungeonBattleMusic.wav" type="audio/wav"></audio>
+									</div>
+									<h4>Music for <a href="https://clarkson1729.itch.io/animal-uprising">Animal Uprising</a></h4>
+									<div>
+										<audio controls><source src="music/AnimalUprising.mp3" type="audio/mp3"></audio>
+									</div>
+									<h4>Puzzle game soundtrack for <a href="https://clarkson1729.itch.io/poppin-blocks">Poppin Blocks</a></h4>
+									<div>
+										<audio controls><source src="music/PoppinBlocksSoundTrack.wav" type="audio/mp3"></audio>
+									</div>
+									<h4>Leaves Fall</a></h4>
+									<div>
+										<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/08PnJsNlWoIyIx0ShXUjxD?utm_source=generator&si=70cbbf5df1c5431d" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+									</div>
+									<h4>Synth City 2</a></h4>
+									<div>
+										<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/60Nud2SyevnzYWJ5chW0Np?utm_source=generator&si=156b947f5c16486e" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+									</div>
+									<h4>Some Lofi Songs</a></h4>
+									<div>
+										<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/4s2C9RbRfcOtK8ReuACRJB?utm_source=generator&si=ee99295eadb846c3" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+										<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/album/5S9ZFPTLzwfBF1w8d1kb3t?utm_source=generator&si=b419ad0f03da4987" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+									</div>
+								</div>
+							</section>
+							<section id="3d">
+								<div class="container">
+									<h3>3d</h3>
+									<p>Over the past few years I have been working on improving my 2d and 3d art skills to bring to life all the 3-dimensional ideas that I have. At the moment I'm using Blender, Substance Painter, and Krita.</p>
+									<!-- <h4>Scorp-Spider</h4> -->
+									<!-- <p>todo insert concept art</p>
+									<p>todo insert model pics/Gif rotation</p>
+									<p>Show Rig / animation</p> -->
+								</div>
+							</section>
+							<section id="contact">
+								<div class="container">
+									<h3>Contact Me</h3>
+									<p>For all enquires please send an email to <a href="mailto:grace@1tspgames.com">grace@1tspgames.com</a>. 
+										I'm currently open for paid commissions, gigs or revenue share arrangements.</p>
+									<!-- <form method="post" action="#">
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
 											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
@@ -182,6 +281,7 @@
 									</form> -->
 								</div>
 							</section>
+
 					</div>
 				<!-- Footer -->
 					<section id="footer">
@@ -200,6 +300,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
+			<script src="assets/js/constants.js"></script>
+			<script src="assets/js/jr_video_buttons.js"></script>
 	</body>
 </html>

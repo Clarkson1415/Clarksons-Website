@@ -9,6 +9,7 @@
 
 :root {
     --main-green: #367536;
+	--highlight-green: #c0ffc0;
 	--vertical-nav-bar-separator: #8a754e;
 }
 
@@ -1710,6 +1711,22 @@ input, select, textarea {
 		}
 
 /* Container */
+	.videoAndButtonsContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		max-width: 100%;
+	}
+
+	.buttonsRow {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 0.5em;
+		max-width: 100%;
+	}
+
+/* og container */
 
 	.container {
 		margin: 0 auto;
@@ -2707,7 +2724,8 @@ input, select, textarea {
 		background: var(--main-green);
 		color: #d2f2e9;
 		height: 100%;
-		overflow-y: auto;
+		/* removed, the scrolly bar in the inner headings panel. this scrolls automatically now. Was auto originally.*/
+		overflow-y: hidden; 
 		position: fixed;
 		text-align: center;
 		top: 0;
@@ -2811,7 +2829,7 @@ input, select, textarea {
 					}
 
 						#header > nav ul li a.active {
-							background: #fff;
+							background: var(--highlight-green);
 							color: var(--main-green) !important;
 						}
 
